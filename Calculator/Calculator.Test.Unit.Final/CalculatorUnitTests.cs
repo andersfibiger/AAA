@@ -16,7 +16,7 @@ namespace Calculator.Test.Unit
         {
             _uut = new Calculator();
         }
-
+        // Test AddPosANdNegNumbers
         [TestCase(3, 2, 5)]
         [TestCase(-3, -2, -5)]
         [TestCase(-3, 2, -1)]
@@ -26,7 +26,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
         }
 
-
+        // test Subtract
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
         [TestCase(-3, 2, -5)]
@@ -36,7 +36,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(a, b), Is.EqualTo(result));
         }
 
-
+        //Testing Miltiply
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
@@ -49,7 +49,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
 
-
+        //Test Power
         [TestCase(2, 3, 8)]
         [TestCase(2, -3, 0.125)]
         [TestCase(-2, -3, -0.125)]
@@ -62,5 +62,20 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
+        //Test Accumulator
+
+        //Test Clear
+        [TestCase()]
+        public void Clear_ResultatIsZero()
+        {
+            _uut.Clear();
+            Assert.That(_uut.Accumulator(), Is.EqualTo(0));
+        }
+        [TestCase()]
+        public void Add_AddPosAndNegNumbers_ResultIsCorrect()
+        {
+          
+        }
+
     }
 }
