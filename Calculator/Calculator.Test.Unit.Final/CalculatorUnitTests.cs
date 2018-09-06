@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Calculator;
 using NUnit.Framework;
 
@@ -26,6 +27,19 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
         }
 
+        //test overload add
+        [TestCase(1, 5)]
+        [TestCase(10,14)]
+        [TestCase(-10, -6)]
+
+        public void Add_PosAndNegNumberAndAccumulator4_ResultIsCorrect(int a, int result)
+        {
+            
+            _uut.Add(2 + 2); //accumulator = 4
+            Assert.That(_uut.Add(a),Is.EqualTo(result));
+        }
+
+
         // test Subtract
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
@@ -34,6 +48,17 @@ namespace Calculator.Test.Unit
         public void Subtract_SubtractPosAndNegNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Subtract(a, b), Is.EqualTo(result));
+        }
+
+        //Test subtract overload
+        [TestCase(2, -2)]
+        [TestCase(-2, -6)]
+        [TestCase(10, 6)]
+
+        public void Subtract_PosAndNegNumbersAndAccumulator4_ResultIsCorrect(int d, int result)
+        {
+            _uut.Add(2 + 2); //accumulator = 4
+            Assert.That(_uut.Subtract(d),Is.EqualTo(result));
         }
 
         //Testing Multiply
@@ -47,6 +72,17 @@ namespace Calculator.Test.Unit
         public void Multiply_MultiplyNunmbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
+        }
+
+        //test multiply overload
+        [TestCase(2, 8)]
+        [TestCase(-2, -8)]
+        [TestCase(10, 40)]
+
+        public void Multiply_PosAndNegNumbersAndAccumulator4_ResultIsCorrect(int a, int result)
+        {
+            _uut.Add(2 + 2);
+            Assert.That(_uut.Multiply(a),Is.EqualTo(result));
         }
 
         //Test Power
@@ -63,6 +99,17 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
 
+        //test power overload
+        [TestCase(2, 16)]
+        [TestCase(0, 0)]
+        [TestCase(-2, -16)]
+
+        public void Power_PosAndNegNumbersAndAccumulator4_ResultIsCorrect(int a, int result)
+        {
+            _uut.Add(2 + 2);
+            Assert.That(_uut.Power(a),Is.EqualTo(result));
+        }
+
         //Test Divide
         [TestCase(4, 2, 2)]
         [TestCase(5, 2, 2.5)]
@@ -73,6 +120,18 @@ namespace Calculator.Test.Unit
         public void Divide_DivideNumbers_ResultIsCorrect(double dividend, double divisor, double result)
         {
             Assert.That(_uut.Divide(dividend, divisor), Is.EqualTo(result));
+        }
+
+        //Test divide overload
+        [TestCase(2.0, 0.5)]
+        [TestCase(-2.5, -0.625)]
+        [TestCase(1.0, 0.25)]
+
+
+        public void DivideOverload_Accumulator4(double a, double result)
+        {
+            _uut.Add(2 + 2);
+            Assert.That(_uut.Divide(a),Is.EqualTo(result));
         }
 
         //Test DivideByZeroException
@@ -115,6 +174,8 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
       
+
+        
 
     }
 }
