@@ -36,7 +36,7 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Subtract(a, b), Is.EqualTo(result));
         }
 
-        //Testing Miltiply
+        //Testing Multiply
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
@@ -62,6 +62,27 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
+
+        //Test Divide
+        [TestCase(4, 2, 2)]
+        [TestCase(5, 2, 2.5)]
+        [TestCase(7.5, 2.5, 3)]
+        [TestCase(-7.5, 2.5, -3)]
+        [TestCase(-5, -2, 2.5)]
+        [TestCase(0, Math.PI, 0)]
+        public void Divide_DivideNumbers_ResultIsCorrect(double dividend, double divisor, double result)
+        {
+            Assert.That(_uut.Divide(dividend, divisor), Is.EqualTo(result));
+        }
+
+        //Test DivideByZeroException
+        [TestCase(0, 0, Double.NaN)]
+        [TestCase(2.5, 0, Double.PositiveInfinity)]
+        public void Divide_DivideByZero_ResultIsException(double dividend, double divisor, double result)
+        {
+            Assert.That(_uut.Divide(dividend, divisor), Is.EqualTo(result));
+        }
+
         //Test Accumulator
         [TestCase()]
         public void Test_Fresh_Accumulator()

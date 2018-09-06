@@ -53,6 +53,7 @@ namespace Calculator
             Accumulator = Math.Pow(x, Accumulator);
             return Accumulator;
         }
+
         public double Divide(double dividend, double divisor)
         {
             Accumulator = dividend / divisor;
