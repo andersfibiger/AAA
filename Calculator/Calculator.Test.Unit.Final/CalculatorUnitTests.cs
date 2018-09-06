@@ -102,7 +102,7 @@ namespace Calculator.Test.Unit
         //test power overload
         [TestCase(2, 16)]
         [TestCase(0, 0)]
-        [TestCase(-2, -16)]
+        [TestCase(-2, 16)]
 
         public void Power_PosAndNegNumbersAndAccumulator4_ResultIsCorrect(int a, int result)
         {
