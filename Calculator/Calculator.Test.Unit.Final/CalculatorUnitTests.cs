@@ -76,11 +76,12 @@ namespace Calculator.Test.Unit
         }
 
         //Test DivideByZeroException
-        [TestCase(0, 0, Double.NaN)]
-        [TestCase(2.5, 0, Double.PositiveInfinity)]
-        public void Divide_DivideByZero_ResultIsException(double dividend, double divisor, double result)
+        [TestCase(0, 0)]
+        [TestCase(2.5, 0)]
+        [TestCase(2, 0)]
+        public void Divide_DivideByZero_ResultIsException(double dividend, double divisor)
         {
-            Assert.That(_uut.Divide(dividend, divisor), Is.EqualTo(result));
+            Assert.Throws<DivideByZeroException>(() => _uut.Divide(dividend, divisor));
         }
 
         //Test Accumulator

@@ -56,6 +56,10 @@ namespace Calculator
 
         public double Divide(double dividend, double divisor)
         {
+            if (divisor == 0)
+            {
+                throw new DivideByZeroException("You FOOL! You divided by zero. You've doomed us all!");
+            }
             Accumulator = dividend / divisor;
             return Accumulator;
         }
