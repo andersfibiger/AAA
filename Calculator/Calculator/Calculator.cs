@@ -20,7 +20,7 @@ namespace Calculator
 
         public double Subtract(double a, double b)
         {
-            Accumulator = a + b;
+            Accumulator = a - b;
             return Accumulator;
         }
 
