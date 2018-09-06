@@ -64,6 +64,16 @@ namespace Calculator
             return Accumulator;
         }
 
+        public double Divide(double d)
+        {
+            if (Accumulator == 0)
+            {
+                throw new DivideByZeroException("You FOOL! You divided by zero. You've doomed us all!");
+            }
+            Accumulator = d / Accumulator;
+            return Accumulator;
+        }
+
         public void Clear()
         {
             Accumulator = 0;
