@@ -12,9 +12,21 @@ namespace Calculator
             return Accumulator;
         }
 
+        public double Add(double a)
+        {
+            Accumulator = a + Accumulator;
+            return Accumulator;
+        }
+
         public double Subtract(double a, double b)
         {
             Accumulator = a + b;
+            return Accumulator;
+        }
+
+        public double Subtract(double a)
+        {
+            Accumulator = a - Accumulator;
             return Accumulator;
         }
 
@@ -24,9 +36,21 @@ namespace Calculator
             return Accumulator;
         }
 
+        public double Multiply(double a)
+        {
+            Accumulator = a * Accumulator;
+            return Accumulator;
+        }
+
         public double Power(double x, double exp)
         {
             Accumulator = Math.Pow(x, exp);
+            return Accumulator;
+        }
+
+        public double Power(double x)
+        {
+            Accumulator = Math.Pow(x, Accumulator);
             return Accumulator;
         }
         public double Divide(double dividend, double divisor)

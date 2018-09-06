@@ -66,14 +66,14 @@ namespace Calculator.Test.Unit
         [TestCase()]
         public void Test_Fresh_Accumulator()
         {
-            Assert.That(_uut.Accumulator(), Is.EqualTo(0));
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
         [TestCase(2,2,4)]
         [TestCase(3,3,6)]
         public void Test_Accumulator_After_Add(double a, double b, double c)
         {
             _uut.Add(a, b);
-            Assert.That(_uut.Accumulator(), Is.EqualTo(c));
+            Assert.That(_uut.Accumulator, Is.EqualTo(c));
         }
         
 
@@ -83,14 +83,14 @@ namespace Calculator.Test.Unit
         public void Clear_ResultIsZero()
         {
             _uut.Clear();
-            Assert.That(_uut.Accumulator(), Is.EqualTo(0));
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
         [TestCase()]
         public void Clear_IsResultZeroAfterAccumulate()
         {
             _uut.Add(2, 2);
             _uut.Clear();
-            Assert.That(_uut.Accumulator(), Is.EqualTo(0));
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
       
 
