@@ -1,3 +1,4 @@
+<!-- Point to our project -->
 <?xml version="1.0" encoding="utf-8"?>
 <AnalyseParams>
   <TargetExecutable>C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe</TargetExecutable>
